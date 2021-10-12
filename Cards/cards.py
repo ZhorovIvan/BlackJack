@@ -1,59 +1,70 @@
-from typing import Final
+import random
 
 
 class DeskOfCards():
     desk_cards = []
-    KIND_OF_CARDS : Final = 13
-
-    ClUB : Final = "Club"
-    DIAMOND : Final = "Diamont"
-    HEART : Final = "Heart"
-    SPADE : Final = "Spade"
-
-    JACK : Final = "Jack"
-    QUEEN : Final = "Queen"
-    KING : Final = "King"
-    ACE : Final = "Ace"
-
+    count_cards = 15
 
     #There are four kind of cards.
     #clubsDeskOfCards
     #diamonds
     #hearts
     #spades
+
+    club = "Club"
+    diamont = "Diamont"
+    heart = "Heart"
+    spade = "Spade"
+
+    jack = "Jack"
+    queen = "Queen"
+    king = "King"
+    ace = "Ace"
+
+
     def __init__(self):
         pass
 
 
     def add_to_desk(self, rank):
-        desk_cards.append((rank, ClUB))
-        desk_cards.append((rank, DIAMOND))
-        desk_cards.append((rank, HEART))
-        desk_cards.append((rank, SPADE))
+        self.desk_cards.append((rank, self.club))
+        self.desk_cards.append((rank, self.diamont))
+        self.desk_cards.append((rank, self.heart))
+        self.desk_cards.append((rank, self.spade))
 
 
-    def create_cards(self, cards_type = "Classic"):
+    def create_cards(self, is_classic = True):
         start_position = 2
 
-        if cards_type == "Classic":
+        if is_classic == True:
             start_position = 6
 
-        for i in range(start_position, KIND_OF_CARDS):
+        for i in range(start_position, self.count_cards):
             if i < 11:
-                add_to_desk(i)
+                self.add_to_desk(i)
             else:
                 match i:
-                    case "11":
-                        add_to_desk(JACK)
-                    case "12":
-                        add_to_desk(QUEEN)
-                    case "13":
-                        add_to_desk(KING)
-                    case "14":
-                        add_to_desk(ACE)
+                    case 11:
+                        self.add_to_desk(self.jack)
+                    case 12:
+                        self.add_to_desk(self.queen)
+                    case 13:
+                        self.add_to_desk(self.king)
+                    case 14:
+                        self.add_to_desk(self.ace)
 
-        def print_desk(self):
-            print(self.desk_cards)
+
+    def get_card(self):
+        index_card = random.randrange(len(self.desk_cards))
+        card = self.desk_cards[index_card]
+        self.desk_cards.pop(index_card)
+        return card
+
+
+    def print_desk(self):
+        print(self.desk_cards)
+
 
 f = DeskOfCards()
-f.create_cards()
+f.create_cards("Not classic")
+print(f.get_card())
