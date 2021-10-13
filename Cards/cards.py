@@ -63,8 +63,3 @@ class DeskOfCards():
 
     def print_desk(self):
         print(self.desk_cards)
-
-
-f = DeskOfCards()
-f.create_cards("Not classic")
-print(f.get_card())
