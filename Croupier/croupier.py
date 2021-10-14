@@ -14,9 +14,11 @@ class Croupier:
 
 
     def is_enouth(self):
-        if self.amount_of_curds < 15:
-            return True
-        return False
+        return self.amount_of_curds < 15
+
+
+    def has_too_many_cards():
+        return self.amount_of_curds > 21
 
 
     def add_card(self, card):
