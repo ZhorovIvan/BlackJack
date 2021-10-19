@@ -9,3 +9,7 @@ class TestCroupier(unittest.TestCase):
 
     def test_get_name(self):
         self.assertEqual(self.A.get_name(),"Ivan")
+
+
+    def test_get_amout(self):
+        self.assertEqual(self.A.get_amount(),0)    

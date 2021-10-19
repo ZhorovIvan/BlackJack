@@ -1,17 +1,16 @@
 #main
-from income import Income
+from Frame import income as inc
 from Croupier import croupier
 
 
 def main():
     try:
-        new_croupier = croupier.Croupier("Ivan")
-        new_croupier.add_card((1,2))
-        print(new_croupier.get_amount())
-
+        i = inc.Income(30)
+        print(i.get_income())
+        
     except Exception as e:
         print(e)
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     main()

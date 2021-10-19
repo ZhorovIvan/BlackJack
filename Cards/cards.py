@@ -2,6 +2,7 @@ import random
 
 
 class DeskOfCards():
+
     desk_cards = []
     count_cards = 15
 
@@ -61,5 +62,15 @@ class DeskOfCards():
         return card
 
 
-    def print_desk(self):
-        print(self.desk_cards)
+    def get_all_cards(self):
+        return self.desk_cards
+
+
+first = DeskOfCards()
+first.create_cards()
+print(len(first.get_all_cards()))
+
+second = DeskOfCards()
+second.create_cards(False)
+print(len(second.get_all_cards()))
+
