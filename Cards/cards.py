@@ -3,7 +3,6 @@ import random
 
 class DeskOfCards():
 
-    desk_cards = []
     count_cards = 15
 
     #There are four kind of cards.
@@ -24,6 +23,7 @@ class DeskOfCards():
 
 
     def __init__(self):
+        self.desk_cards = []
         pass
 
 
@@ -64,13 +64,3 @@ class DeskOfCards():
 
     def get_all_cards(self):
         return self.desk_cards
-
-
-first = DeskOfCards()
-first.create_cards()
-print(len(first.get_all_cards()))
-
-second = DeskOfCards()
-second.create_cards(False)
-print(len(second.get_all_cards()))
-

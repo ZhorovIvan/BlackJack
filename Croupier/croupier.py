@@ -1,8 +1,6 @@
 
 class Croupier:
 
-    amount_of_curds = 0
-
     jack = "Jack"
     queen = "Queen"
     king = "King"
@@ -10,6 +8,7 @@ class Croupier:
 
 
     def __init__(self,name):
+        self.amount_of_curds = 0
         self.name = name
 
 

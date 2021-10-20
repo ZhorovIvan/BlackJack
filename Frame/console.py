@@ -1,14 +1,14 @@
+import os
+
+
+#make only script
 
 class Desk:
 
-#I can init croupier module here.
-
-
-    amount_humon_cards = 0
-    my_cards = []
-    bot_cards = []
-
     def __init__(self):
+        self.my_cards = []
+        self.bot_cards = []
+        self.amount_humon_cards = 0
         pass
 
 
@@ -23,3 +23,7 @@ class Desk:
     def print_all_cards(self, sum_bot, sum_humon):
         print(self.my_cards + sum_humon + "\n" +
                 self.bot_cards + sum_bot)
+
+
+    def clear_desk(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
