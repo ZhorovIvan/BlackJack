@@ -16,7 +16,7 @@ class Croupier:
         return self.amount_of_curds < 15
 
 
-    def has_too_many_cards():
+    def has_too_many_cards(self):
         return self.amount_of_curds > 21
 
 

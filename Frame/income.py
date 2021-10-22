@@ -2,7 +2,7 @@
 class Income:
 
     def __init__(self, income):
-        if str(income).isnumeric() and income > 0 and income < 50:
+        if str(income).isnumeric() and income >= 0 and income < 50:
             self.income = income
         else:
             raise Exception("You write incorrect the income. Try again")
