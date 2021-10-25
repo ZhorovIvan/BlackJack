@@ -16,10 +16,6 @@ class Croupier:
         return self.amount_of_curds < 15
 
 
-    def has_too_many_cards(self):
-        return self.amount_of_curds > 21
-
-
     def add_card(self, card):
         if str(card[0]).isnumeric():
             self.amount_of_curds += card[0]
