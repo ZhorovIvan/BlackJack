@@ -12,6 +12,10 @@ class Desk:
         self.amount_cards = 0
 
 
+    def get_ammount_cards(self):
+        return self.amount_cards
+
+
     def add_amount(self, card):
         match card:
             case self.jack:
@@ -41,7 +45,7 @@ class Desk:
 
 
     def is_enouth(self):
-        return self.amount_cards < 15            
+        return self.amount_cards <= 15            
 
 
 def clear_desk():
