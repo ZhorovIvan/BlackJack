@@ -1,4 +1,3 @@
-from logging import raiseExceptions
 from Frame import console
 from Cards import cards
 import time
@@ -14,9 +13,6 @@ choise_input_text = config["Game"]["choise_input_text"] + "\n"
 stop_word = "stop"
 take_word = "take"
 is_classic_game = True
-desk_cards = cards.DeskOfCards()
-new_human_desk = console.Desk()
-new_bot_desk = console.Desk() 
 
 
 def preparation():
@@ -42,8 +38,16 @@ def move_in_game(who_move, messange):
 
 
 def round():
+    global new_human_desk 
+    global new_bot_desk
+    global desk_cards
+
+    new_human_desk = console.Desk()
+    new_bot_desk = console.Desk()   
+    desk_cards = cards.DeskOfCards()
     humon_stop_step = False
     game = True
+
     try:
         desk_cards.create_cards(is_classic_game)
         while(game):
@@ -60,13 +64,15 @@ def round():
             else:
                 time.sleep(1)
                 move_in_game(new_bot_desk, "Bot")
-                game = new_bot_desk.is_enouth()
+                game = new_bot_desk.is_enough()
                 is_lose_bot = new_bot_desk.has_too_many_cards()
-
-        if is_lose_human and not is_lose_bot:
+                
+        if not is_lose_human and is_lose_bot or \
+            new_human_desk.get_ammount_cards() > new_bot_desk.get_ammount_cards():
             return "Win"
-        elif is_lose_bot and not is_lose_human:
-            return "Lose"   
+        elif is_lose_bot and not is_lose_human or \
+            new_human_desk.get_ammount_cards() < new_bot_desk.get_ammount_cards():
+            return "Lose" 
         elif is_lose_human and is_lose_bot or \
              new_bot_desk.get_ammount_cards() == new_human_desk.get_ammount_cards():
             return "Draw"   

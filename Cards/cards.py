@@ -24,7 +24,6 @@ class DeskOfCards():
 
     def __init__(self):
         self.desk_cards = []
-        pass
 
 
     def add_to_desk(self, rank):
@@ -64,3 +63,7 @@ class DeskOfCards():
 
     def get_all_cards(self):
         return self.desk_cards
+
+
+    def delete_desk(self):
+        self.desk_cards.clear()

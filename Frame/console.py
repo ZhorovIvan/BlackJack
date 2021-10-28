@@ -31,7 +31,7 @@ class Desk:
 
 
     def has_too_many_cards(self):
-        return self.amount_cards > 21
+        return self.amount_cards >= 22
 
 
     def add_card(self,card):
@@ -44,7 +44,7 @@ class Desk:
                 "\nSum " + who_is_moved + " cards equals - " + str(self.amount_cards)
 
 
-    def is_enouth(self):
+    def is_enough(self):
         return self.amount_cards <= 15            
 
 

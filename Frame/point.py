@@ -14,6 +14,6 @@ class Point:
 
     def set_point(self, value):
         if str(value).isnumeric():
-            self.point += value
+            self.point = value
         else:
             raise Exception("You try to set not numeric")

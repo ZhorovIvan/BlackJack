@@ -34,7 +34,7 @@ def main():
                 break
             time.sleep(4)   
             console.clear_desk()     
-            print("Next round")
+            print("Next round. You have: " + str(health.get_point()) + " health")
     except Exception as e:
         print(e.with_traceback())
 
